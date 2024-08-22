@@ -1,0 +1,111 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #fff;
+  background-color: hsl(253, 54%, 5%);
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.card {
+  padding: 2rem;
+  border-radius: 14px;
+}
+
+.bg-image {
+  background-image: url("mike-l-8Qr1ixi-rMU-unsplash.jpg");
+}
+
+.bg-blue {
+  background: linear-gradient(45deg, hsl(240, 100%, 43%) 20%, hsl(269, 100%, 32%));
+}
+
+.bg-magenta {
+  background: linear-gradient(45deg, hsl(300, 100%, 36%) 10%, hsl(258, 100%, 26%));
+}
+
+.padding {
+  padding-block: 6rem;
+}
+
+.maxwidth {
+  max-width: 60rem;
+  width: min(100% - 40px, 60rem);
+  margin-inline: auto;
+}
+
+.fb-wrapper {
+  display: grid;
+  grid-template-columns: 1fr min(100% - 40px, 60rem) 1fr;
+}
+.fb-wrapper > * {
+  grid-column: 2;
+}
+.fb-wrapper > .fullbleed {
+  grid-column: 1/-1;
+}
+
+.fb-col-wrapper {
+  --space-lr: 40px;
+  --space-gap: 20px;
+  --col-count: 2;
+  display: grid;
+  grid-template-columns: 1fr repeat(var(--col-count), calc((min(100% - var(--space-lr), 60rem) - (var(--col-count) - 1) * var(--space-gap)) / var(--col-count))) 1fr;
+  gap: var(--space-gap);
+}
+@media (width >= 43.75em) {
+  .fb-col-wrapper {
+    --space-lr: 80px;
+    --space-gap: 30px;
+    --col-count: 6;
+  }
+}
+@media (width >= 62.5em) {
+  .fb-col-wrapper {
+    --col-count: 12;
+  }
+}
+.fb-col-wrapper .card {
+  grid-column: 2/-2;
+}
+@media (width >= 43.75em) {
+  .fb-col-wrapper .card {
+    grid-column: 2/5;
+  }
+}
+@media (width >= 62.5em) {
+  .fb-col-wrapper .card {
+    grid-column: 2/8;
+  }
+}
+.fb-col-wrapper img {
+  grid-column: 2/-1;
+}
+@media (width >= 43.75em) {
+  .fb-col-wrapper img {
+    grid-column: 5/-1;
+  }
+}
+@media (width >= 62.5em) {
+  .fb-col-wrapper img {
+    grid-column: 8/-1;
+  }
+}/*# sourceMappingURL=style.css.map */
