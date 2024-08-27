@@ -43,11 +43,15 @@ img {
 }
 
 .padding {
-  padding-block: 6rem;
+  padding-block: clamp(2rem, 0.1818181818rem + 7.7575757576vw, 6rem);
 }
 
-.maxwidth {
+.mw {
   max-width: 60rem;
+  margin-inline: auto;
+}
+
+.mw-min {
   width: min(100% - 40px, 60rem);
   margin-inline: auto;
 }
